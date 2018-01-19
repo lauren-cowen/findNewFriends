@@ -7,7 +7,7 @@ import AppBar from 'material-ui/AppBar';
  */
 const AppBarExampleIcon = () => (
   <AppBar
-    title="Name of Website"
+    title="Accio Friends"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
 );

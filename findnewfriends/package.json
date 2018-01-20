@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "material-ui": "^0.20.0",
+    "mongoose-type-email": "^1.0.5",
+    "mongoose-type-url": "^1.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0"

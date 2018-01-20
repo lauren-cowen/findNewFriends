@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import AppBarExampleIcon from '../../components/AppBar';
-import LoginForm from "../../components/Form";
-import Form from "../../components/Form";
 import ProfileForm from "../../components/NewUser";
 
-class HomepageContainer extends Component {
+class NewUserContainer extends Component {
   state = {
     result: {},
     search: ""
@@ -17,12 +15,12 @@ render() {
 				<AppBarExampleIcon/>
 			</div>
 			<div className = "wrapper">
-				<LoginForm/>
+				<ProfileForm/>
 			</div>			
-	    </div>
+		</div>
 	);
 }
 }
 
 
-export default HomepageContainer;
+export default NewUserContainer;

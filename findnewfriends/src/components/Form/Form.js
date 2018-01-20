@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from "react-router-dom";
 
 import "./Form.css";
 const styles = {
   fullWidth: true
 }
+let createNewUser = <Link to={"/Newuser"}/>;
 
 class LoginForm extends Component {
   // Setting the component's initial state
@@ -77,7 +79,7 @@ render() {
             />
             <br />
                 <RaisedButton label="Sign In" primary={true} onClick={this.handleFormSubmit}/>
-                <RaisedButton label="Create New User" secondary={true}/>
+                <RaisedButton label="Create New User" secondary={true}   containerElement={<Link to="/Newuser" />}linkButton={true}/>
           </form>
     </div>
   );

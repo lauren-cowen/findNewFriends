@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import AppBarExampleIcon from './AppBar';
-
-import LoginForm from "./Form";
-
-import Form from "./Form";
-
-import ProfileForm from "./NewUser";
-
-
+import AppBarExampleIcon from '../../components/AppBar';
+import LoginForm from "../../components/Form";
+import Form from "../../components/Form";
+import ProfileForm from "../../components/NewUser";
 
 class HomepageContainer extends Component {
   state = {
@@ -23,11 +18,11 @@ render() {
 			<AppBarExampleIcon/>
 
 			<div className = "wrapper">
-			<NewUserForm/>
-			</div>			
-			<LoginForm/>
+				<LoginForm/>
 
 			<ProfileForm/>
+			</div>			
+			
 			
       	</div>
 

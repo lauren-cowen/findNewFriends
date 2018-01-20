@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import HomepageContainer from './components/HomepageContainer';
+import HomepageContainer from './pages/Homepage/HomepageContainer';
 
 const App = () => (
   <MuiThemeProvider>

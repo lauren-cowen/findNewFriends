@@ -9,7 +9,7 @@ import AppBar from 'material-ui/AppBar';
 const AppBarExampleIcon = () => (
   <AppBar
     title="Accio Friends"
-    onTitleClick={this.handleToggle}
+    onTitleClick={NavDrawer.handleToggle}
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
 );

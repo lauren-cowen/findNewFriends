@@ -13,7 +13,7 @@ var Schema = mongoose.Schema;
 
 var profileSchema = new Schema({
   // First Name, a string, must be entered
-  firtsName: {
+  firstName: {
     type: String,
     required: true,
   },
@@ -35,10 +35,6 @@ var profileSchema = new Schema({
     type: mongoose.SchemaTypes.Url
   },
   // date is just a string
-  generation: {
-    type: String,
-    required: true
-  },
   quizQuestion1: {
     type: Boolean,
     default: false

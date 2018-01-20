@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AppBarExampleIcon from './AppBar';
 import SubmitButton from './SubmitButton';
-import NewUserButton from './NewUserButton';
 import Form from "./Form";
 
 class HomepageContainer extends Component {

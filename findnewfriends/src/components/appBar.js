@@ -1,4 +1,5 @@
 import React from 'react';
+import NavDrawer from './NavDrawer';
 import AppBar from 'material-ui/AppBar';
 
 /**
@@ -8,6 +9,7 @@ import AppBar from 'material-ui/AppBar';
 const AppBarExampleIcon = () => (
   <AppBar
     title="Accio Friends"
+    onTitleClick={this.handleToggle}
     iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
 );

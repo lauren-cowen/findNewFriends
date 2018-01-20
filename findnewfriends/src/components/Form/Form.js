@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Form.css";
 
-class NewUserForm extends Component {
+class LoginForm extends Component {
   // Setting the component's initial state
   state = {
     firstName: "",
@@ -80,4 +80,4 @@ render() {
 
 }
 
-export default NewUserForm;
+export default LoginForm;

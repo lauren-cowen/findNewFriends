@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import AppBarExampleIcon from './AppBar';
 
-import NewUserForm from "./Form";
+import LoginForm from "./Form";
 
 import SubmitButton from './SubmitButton';
-import Form from "./Form";
+
+import ProfileForm from "./NewUser";
 
 
 class HomepageContainer extends Component {
@@ -20,8 +21,9 @@ render() {
 
 			<AppBarExampleIcon/>
 
+			<LoginForm/>
 
-			<NewUserForm/>
+			<ProfileForm/>
 			
       	</div>
 

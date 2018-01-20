@@ -8,7 +8,7 @@ const style = {
 
 const SubmitButton = () => (
   <div>
-    <RaisedButton label="Submit" primary={true} style={style} onClick={this.handleFormSubmit}/>
+    <RaisedButton label="Sign In" primary={true} style={style} onClick={this.handleFormSubmit}/>
     <RaisedButton label="Create New User" secondary={true} style={style}/>
   </div>
 );

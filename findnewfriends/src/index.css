@@ -6,10 +6,6 @@ body {
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 1fr;
 }
 
-form {
-	background: lightGrey;
-	border: 1px solid black;
-}

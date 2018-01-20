@@ -3,7 +3,7 @@ import AppBarExampleIcon from './AppBar';
 
 import NewUserForm from "./Form";
 
-import SubmitButton from './SubmitButton';
+
 import Form from "./Form";
 
 
@@ -20,9 +20,9 @@ render() {
 
 			<AppBarExampleIcon/>
 
-
+			<div className = "wrapper">
 			<NewUserForm/>
-			
+			</div>			
       	</div>
 
       		</div>

@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+
 import "./Form.css";
+const styles = {
+  fullWidth: true
+}
 
 class NewUserForm extends Component {
   // Setting the component's initial state
@@ -8,6 +14,7 @@ class NewUserForm extends Component {
     lastName: "",
     password: ""
   };
+
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -45,34 +52,32 @@ class NewUserForm extends Component {
   };
 render() {
   return (
-    <div>
-          <p>
-            Login {this.state.firstName} {this.state.lastName}
-          </p>
+    <div className = "signInForm">
           <form className="form">
-            <input
-              value={this.state.firstName}
-              name="firstName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="First Name"
+            <TextField
+            fullWidth = {styles.fullWidth}
+            hintText = "First Name"
+            value={this.state.firstName}
+            onChange={this.handleInputChange}
             />
-            <input
-              value={this.state.lastName}
-              name="lastName"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Last Name"
+            <br />
+            <TextField 
+            hintText = "Last Name"
+             fullWidth = {styles.fullWidth}
+            value={this.state.lastName}
+            onChange={this.handleInputChange}
             />
-            <input
-              value={this.state.password}
-              name="password"
-              onChange={this.handleInputChange}
-              type="password"
-              placeholder="Password"
+            <br />
+           <TextField 
+            hintText = "Password"
+             fullWidth = {styles.fullWidth}
+            value={this.state.password}
+            type="password"
+            onChange={this.handleInputChange}
             />
-            <button onClick={this.handleFormSubmit}>Submit</button>
-            <button>Create New User</button>
+            <br />
+                <RaisedButton label="Sign In" primary={true} onClick={this.handleFormSubmit}/>
+                <RaisedButton label="Create New User" secondary={true}/>
           </form>
     </div>
   );

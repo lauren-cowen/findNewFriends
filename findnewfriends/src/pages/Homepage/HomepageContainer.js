@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppBarExampleIcon from '../../components/AppBar';
+import AppBarNavigation from '../../components/AppBar';
 import LoginForm from "../../components/Form";
 import Form from "../../components/Form";
 import ProfileForm from "../../components/NewUser";
@@ -14,7 +14,7 @@ render() {
 	return (
 		<div>		
 			<div>
-				<AppBarExampleIcon/>
+				<AppBarNavigation/>
 			</div>
 			<div className = "wrapper">
 				<LoginForm/>

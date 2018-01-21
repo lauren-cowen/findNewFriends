@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppBarExampleIcon from '../../components/AppBar';
+import AppBarNavigation from '../../components/AppBar';
 import ProfileForm from "../../components/NewUser";
 
 class NewUserContainer extends Component {
@@ -12,7 +12,7 @@ render() {
 	return (
 		<div>		
 			<div>
-				<AppBarExampleIcon/>
+				<AppBarNavigation/>
 			</div>
 			<div className = "wrapper">
 				<ProfileForm/>

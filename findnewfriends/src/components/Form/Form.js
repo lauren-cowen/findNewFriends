@@ -12,9 +12,8 @@ let createNewUser = <Link to={"/Newuser"}/>;
 class LoginForm extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
-    lastName: "",
     password: "",
+    email: "",
     errors: "",
   };
 
@@ -36,22 +35,17 @@ class LoginForm extends Component {
   loginFormIsValid = (name, value) => {
     var formIsValid = true;
 
-    if(name==="firstName"&&!value){
+    if(name==="email"&&!value){
       formIsValid = false;
-      var newErrors = Object.assign(this.state.errors, {firstName: "First Name is required"});
+      var newErrors = Object.assign(this.state.errors, {email: "Email is required"});
       this.setState({ errors: newErrors });
     }
-    else if(name==="lastName"&&!value){
-      formIsValid = false;
-      var newErrors = Object.assign(this.state.errors, {lastName: "Last Name is required"});
-      this.setState({ errors: newErrors });
-    }
-    else if(name==="password"&&value.length<6) {
+    if(name==="password"&&value.length<6) {
       formIsValid = false;
       var newErrors = Object.assign(this.state.errors, {password: "Choose a more secure password"});
       this.setState({ errors: newErrors });
     }
-    else if(name==="password"&&!value) {
+    if(name==="password"&&!value) {
       formIsValid = false;
        var newErrors = Object.assign(this.state.errors, {password: "Password is required"});
        this.setState({ errors: newErrors });
@@ -63,39 +57,30 @@ class LoginForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if(this.loginFormIsValid("firstName", this.state.firstName)&&
-      this.loginFormIsValid("lastName", this.state.lastName)&&
-      this.loginFormIsValid("password", this.state.password)) {
+    const validEmail = this.loginFormIsValid("email", this.state.email);
+    const validPassword = this.loginFormIsValid("password", this.state.password);
+    if(validEmail&&validPassword) {
       alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
     }
    
     this.setState({
       firstName: "",
       lastName: "",
-      password: ""
+      password: "",
+      email: ""
     });
   };
 render() {
   return (
     <div className = "signInForm">
           <form className="form">
-            <TextField
-              fullWidth = {styles.fullWidth}
-              hintText = "First Name"
-              errorText="This field is required."
-              value={this.state.firstName}
-              onChange={this.handleInputChange}
-              id = "firstName"
-              errorText = {this.state.errors.firstName}
-            />
-            <br />
             <TextField 
-              hintText = "Last Name"
+              hintText = "Email"
               fullWidth = {styles.fullWidth}
-              value={this.state.lastName}
+              value={this.state.email}
               onChange={this.handleInputChange}
-              id = "lastName"
-              errorText = {this.state.errors.lastName}
+              id = "email"
+              errorText = {this.state.errors.email}
             />
             <br />
            <TextField 

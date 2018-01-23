@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import AppBarNavigation from '../../components/AppBar';
 import LoginForm from "../../components/Form";
 import Form from "../../components/Form";
-import ProfileForm from "../../components/NewUser";
+import IntroCard from "../../components/IntroCard"
+import MainFooter from "../../components/Footer"
 
 class HomepageContainer extends Component {
   state = {
@@ -12,12 +13,18 @@ class HomepageContainer extends Component {
 
 render() {
 	return (
-		<div>		
-			<div>
+		<div className = "mainWrapper">		
+			<div className = "mainHeader">
 				<AppBarNavigation/>
 			</div>
-			<div className = "wrapper">
-				<LoginForm/>
+			<div className = "smallWrapper">
+					<LoginForm/>
+				<div className = "introCard">
+					<IntroCard/>
+				</div>
+			</div>
+			<div className = "MainFooter">
+				<MainFooter/>
 			</div>			
 	    </div>
 	);

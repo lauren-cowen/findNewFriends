@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 
 import "./Form.css";
 const styles = {
@@ -11,11 +12,21 @@ let createNewUser = <Link to={"/Newuser"}/>;
 
 class LoginForm extends Component {
   // Setting the component's initial state
-  state = {
-    password: "",
-    email: "",
-    errors: "",
+  constructor(props){
+    super(props);
+    this.state = {
+      password: "",
+      email: "",
+      errors: "",
+    }
   };
+
+
+  validateUser = () => {
+    API.getProfileByEmail(this.state.email) 
+    .then(res => alert(res))
+    .catch(err => console.log(err));
+  }
 
 
   handleInputChange = event => {
@@ -60,12 +71,10 @@ class LoginForm extends Component {
     const validEmail = this.loginFormIsValid("email", this.state.email);
     const validPassword = this.loginFormIsValid("password", this.state.password);
     if(validEmail&&validPassword) {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+      alert("Hello");
     }
    
     this.setState({
-      firstName: "",
-      lastName: "",
       password: "",
       email: ""
     });
@@ -73,7 +82,7 @@ class LoginForm extends Component {
 render() {
   return (
     <div className = "signInForm">
-          <form className="form">
+          <form onSubmit = {this.handleFormSubmit} >
             <TextField 
               hintText = "Email"
               fullWidth = {styles.fullWidth}
@@ -93,7 +102,7 @@ render() {
               errorText = {this.state.errors.password}
             />
             <br />
-                <RaisedButton label="Sign In" primary={true} onClick={this.handleFormSubmit}/>
+                <RaisedButton type="submit"  label="Sign In" primary={true} onClick={this.handleFormSubmit}/>
                 <RaisedButton label="Create New User" secondary={true}   containerElement={<Link to="/Newuser" />}linkButton={true}/>
           </form>
     </div>

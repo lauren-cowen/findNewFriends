@@ -23,7 +23,7 @@ var profileSchema = new Schema({
     required: true
   },
   // e-mail, a string, must be entered
-  eMail: {
+  email: {
     type: mongoose.SchemaTypes.Email,
     required: true
   },

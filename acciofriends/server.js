@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
+const api = require("./api");
 const app = express();
 const PORT = process.env.PORT || 3002;
 
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
 // Add routes, both API and view
-//app.use(routes);
+app.use(api);
 
 // Set up promises with mongoose
 //mongoose.Promise = global.Promise;
@@ -22,8 +22,6 @@ mongoose.connect(
   {
     useMongoClient: true
   }
-  console.log("connected to mongoose")
-  if(error) throw error;
 );
 
 // Start the API server

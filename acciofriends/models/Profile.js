@@ -44,9 +44,9 @@ var profileSchema = new Schema({
   	default: false
   },
   quizQuestion3: {
-  	type: String,
-  	required: true
-  }
+  	type: Boolean,
+  	default: false
+  },
   matches: {
   	type: Array,
   	default: []
@@ -64,7 +64,7 @@ profileSchema.pre('save', function(next){
     if(err) return next (err);
 
     //hash the password using our new salt
-    bcrypt.hash(user.password, salt, function(err, salt){
+    bcrypt.hash(user.password, salt, function(err, hash){
       if(err) return next(err);
 
       //override the cleartext password with the hashed one

@@ -3,10 +3,6 @@ import AppBarNavigation from '../../components/AppBar';
 import ProfileForm from "../../components/NewUser";
 
 class NewUserContainer extends Component {
-  state = {
-    result: {},
-    search: ""
-  };
 
 render() {
 	return (

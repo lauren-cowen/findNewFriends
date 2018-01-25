@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3002/",
   "dependencies": {
+    "arrow-keys-react": "^1.0.6",
     "axios": "^0.16.2",
     "material-ui": "^0.20.0",
     "react": "^16.0.0",

@@ -38,13 +38,25 @@ class ProfileForm extends Component {
 
   }
 
+  getNewProfileInformation = email=> {
+   API.getProfileByEmail(email).then(res => {
+     this.props.history.replace({pathname: '/profile/' + res._id})
+
+   })
+ }
+
+ postNewProfile = () =>{
+   API.saveProfile(this.state).then(res => {
+     this.getNewProfileInformation(this.state.email)
+ })
+}
+
   handleSubmit = (e) => {
      e.preventDefault();
     //deleting the errors key from the state object
     delete this.state.errors;
     //creating Profile in DB
-    API.saveProfile(this.state);
-
+    this.postNewProfile();
 
     console.log(JSON.stringify(this.state, null, 2));
   }

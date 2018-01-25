@@ -11,7 +11,8 @@ const App = () => (
     			<Switch>
     				<Route exact path="/" component={HomepageContainer} />
     				<Route exact path="/Newuser" component={NewUserContainer} />
-    			</Switch>
+            <Route exact path="/profile/:id" component={HomepageContainer} />
+     			</Switch>
     		</div>
   		</MuiThemeProvider>
   </Router>

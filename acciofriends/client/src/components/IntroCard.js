@@ -14,7 +14,7 @@ const IntoCard = () => (
     </CardMedia>
     <CardTitle title="Accio Friends" subtitle="Making Magical Friendships Worldwide" />
     <CardText>
-      Accio Friends is committed to connect people with similar interests. Simply swipe through potential friends that have similar interests. When you find your new magical friend, swipe left and they will be added to your profile. You can then choose to send them a message.
+      Accio Friends is committed helping you make magical friendships, that can survive soul sucking creatures, like dementors.  With your new friends, you can accomplish any tri-wizard task, and can even break into a Gringotts bank.  We are devoted to helping you make those connections, outside of a train and school. To begin finding friends who can lead you into trouble, with a Marauders Map of course, please create a profile or login.
     </CardText>
     <CardActions>
       <FlatButton label="Get Started" containerElement={<Link to="/Newuser" />}linkButton={true} />

@@ -19,5 +19,9 @@ export default {
   // Saves a book to the database
   saveProfile: function(profileData) {
     return axios.post("/api/profile", profileData);
+  },
+
+    getAllProfiles: function() {
+    return axios.get("/api/getAllProfiles");
   }
 };

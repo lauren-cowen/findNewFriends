@@ -32,7 +32,7 @@ var profileSchema = new Schema({
     required: true
   },
   imageURL: {
-    type: mongoose.SchemaTypes.Url
+    type: String
   },
   // date is just a string
   quizQuestion1: {

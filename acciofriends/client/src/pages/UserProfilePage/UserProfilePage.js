@@ -47,6 +47,9 @@ componentWillMount() {
 		})
 	})
 	//add functionality to get all of the profiles that match with this user and store them to this.state.matches[]
+	API.getAllProfiles().then(res =>{
+		this.setState({'matches': res.data})
+	})
 
 }
 

@@ -3,10 +3,11 @@ const db = require("../models");
 //Define methods for the profile controller
 module.exports = {
 	findAll: function(req, res) {
+    console.log("hi")
 		db.Profile
 			.find(req.query)
 			.sort({id: -1})
-			.then(dbModel => res.json(dbModel))
+			.then(dbModel => res.json(dbModel) console.log(dbModel));
 			.catch(err => res.status(422).json(err));
 	},
 	findById: function(req, res) {

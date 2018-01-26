@@ -10,6 +10,10 @@ router.route("/")
   	.route("/findbyemail")
   	.get(profileController.findByEmail)
 
+  router
+  	.route("/getAllProfiles")
+  	.get(profileController.findAll)
+
 // Matches with "/api/profile/:id"
 router
   .route("/:id")

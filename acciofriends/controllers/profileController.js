@@ -16,9 +16,12 @@ module.exports = {
       		.catch(err => res.status(422).json(err));
   	},
   findByEmail: function(req, res){
+    console.log(req.query);
     db.Profile
-      .findOne({'email': req.params.email})
-      .then(dbModel =>res.json(dbModel))
+      .findOne({'email': req.query.email})
+      .then(dbModel => {
+        res.json(dbModel._id)
+      })
       .catch(err => res.status(422).json(err));
   },
   	create: function(req, res) {

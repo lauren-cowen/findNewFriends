@@ -2,8 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import API from "../../utils/API";
+import createHistory from "history/createBrowserHistory"
+
+
 
 const styles = {
   block: {
@@ -37,11 +40,15 @@ class ProfileForm extends Component {
   notusingthisfunction = () => {
 
   }
-
+  
   getNewProfileInformation = email=> {
+    let history = createHistory()
+    console.log(history.location)
    API.getProfileByEmail(email).then(res => {
-     this.props.history.replace({pathname: '/profile/' + res._id})
-
+    console.log(res);
+     // history.push({pathname: '/profile/' + res._id})
+     history.push('/profile/' + res.data);
+     history.go(0);
    })
  }
 

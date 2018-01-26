@@ -6,6 +6,10 @@ router.route("/")
   .get(profileController.findAll)
   .post(profileController.create);
 
+  router
+  	.route("/findbyemail")
+  	.get(profileController.findByEmail)
+
 // Matches with "/api/profile/:id"
 router
   .route("/:id")
@@ -13,8 +17,6 @@ router
   .put(profileController.update)
   .delete(profileController.remove);
 
-router
-	.route("/:email")
-	.get(profileController.findByEmail)
+
 
 module.exports = router;

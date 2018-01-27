@@ -45,7 +45,6 @@ class ProfileForm extends Component {
     let history = createHistory()
     console.log(history.location)
    API.getProfileByEmail(email).then(res => {
-    console.log(res);
      // history.push({pathname: '/profile/' + res._id})
      history.push('/profile/' + res.data);
      history.go(0);

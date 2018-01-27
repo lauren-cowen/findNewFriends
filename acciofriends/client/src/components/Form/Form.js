@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import createHistory from "history/createBrowserHistory"
 
 import "./Form.css";
 const styles = {
@@ -19,14 +20,38 @@ class LoginForm extends Component {
       email: "",
       errors: "",
     }
-  };
+  }
 
 
-  validateUser = () => {
+  DontUse = () => {
     API.getProfileByEmail(this.state.email) 
     .then(res => alert(res))
     .catch(err => console.log(err));
   }
+
+  validateUser = email => {
+   
+    API.getProfileByEmail(email).then(res => {
+      this.validatePassword(res.data);
+    })
+  }
+
+  validatePassword = (id) => {
+     let history = createHistory();
+     API.getProfile(id).then(res =>{
+      console.log(res.data);
+      if(res.data.password===this.state.password){
+        history.push('/profile/' + res.data);
+        history.go(0);
+      }
+      else {
+        this.setState({'errors': {'password': "Invalid Username or Password"}})
+      }
+     })
+
+  }
+
+
 
 
   handleInputChange = event => {
@@ -41,24 +66,25 @@ class LoginForm extends Component {
     this.setState({
       [name]: value
     }, ()=>{this.loginFormIsValid(name, value)});
-  };
+  }
 
   loginFormIsValid = (name, value) => {
     var formIsValid = true;
+    var newErrors;
 
     if(name==="email"&&!value){
       formIsValid = false;
-      var newErrors = Object.assign(this.state.errors, {email: "Email is required"});
+      newErrors = Object.assign(this.state.errors, {email: "Email is required"});
       this.setState({ errors: newErrors });
     }
     if(name==="password"&&value.length<6) {
       formIsValid = false;
-      var newErrors = Object.assign(this.state.errors, {password: "Choose a more secure password"});
+      newErrors = Object.assign(this.state.errors, {password: "Choose a more secure password"});
       this.setState({ errors: newErrors });
     }
     if(name==="password"&&!value) {
       formIsValid = false;
-       var newErrors = Object.assign(this.state.errors, {password: "Password is required"});
+       newErrors = Object.assign(this.state.errors, {password: "Password is required"});
        this.setState({ errors: newErrors });
     }
     return formIsValid;
@@ -71,7 +97,7 @@ class LoginForm extends Component {
     const validEmail = this.loginFormIsValid("email", this.state.email);
     const validPassword = this.loginFormIsValid("password", this.state.password);
     if(validEmail&&validPassword) {
-      alert("Hello");
+      this.validateUser(this.state.email);
     }
    
     this.setState({
@@ -79,6 +105,7 @@ class LoginForm extends Component {
       email: ""
     });
   };
+
 render() {
   return (
     <div className = "signInForm">

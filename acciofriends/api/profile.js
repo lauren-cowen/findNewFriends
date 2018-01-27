@@ -17,6 +17,10 @@ router
   .put(profileController.update)
   .delete(profileController.remove);
 
+  router
+  	.route("/getAllProfiles")
+  	.get(profileController.findAll)
+
 
 
 module.exports = router;

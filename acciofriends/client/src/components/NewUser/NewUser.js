@@ -6,8 +6,6 @@ import { Redirect, Link } from "react-router-dom";
 import API from "../../utils/API";
 import createHistory from "history/createBrowserHistory"
 
-
-
 const styles = {
   block: {
     maxWidth: 250,

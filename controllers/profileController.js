@@ -7,7 +7,7 @@ module.exports = {
 		db.Profile
 			.find(req.query)
 			.sort({id: -1})
-			.then(dbModel => res.json(dbModel) console.log(dbModel));
+			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(422).json(err));
 	},
 	findById: function(req, res) {
